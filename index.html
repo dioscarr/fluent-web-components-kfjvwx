@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		h1,
+		h2 {
+			font-family: Lato;
+		}
+
+		:not(:defined) {
+			visibility: hidden;
+		}
+
+		fluent-badge {
+			--badge-fill-highlight: #ffd800;
+			--badge-fill-lowlight: #333;
+			--badge-color-highlight: #000;
+			--badge-color-lowlight: #fff;
+		}
+
+		.controls {
+			display: grid;
+			grid-gap: 8px;
+			justify-content: start;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<fluent-design-system-provider use-defaults>
+			<design-property-panel></design-property-panel>
+			<div id="accordion">
+				<h2>Accordion</h2>
+				<fluent-accordion>
+					<fluent-accordion-item>
+						<span slot="heading">Panel one</span>
+						<div>
+							<h3>Panel one heading</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+								do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+								irure dolor in reprehenderit in voluptate velit esse cillum
+								dolore eu fugiat nulla pariatur.
+							</p>
+						</div>
+					</fluent-accordion-item>
+					<fluent-accordion-item>
+						<span slot="heading">Panel two</span>
+						<div>
+							<h3>Panel two heading</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+								do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+								irure dolor in reprehenderit in voluptate velit esse cillum
+								dolore eu fugiat nulla pariatur.
+							</p>
+						</div>
+					</fluent-accordion-item>
+					<fluent-accordion-item>
+						<span slot="heading">Panel three</span>
+						<div>
+							<h3>Panel three heading</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+								do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+								irure dolor in reprehenderit in voluptate velit esse cillum
+								dolore eu fugiat nulla pariatur.
+							</p>
+						</div>
+					</fluent-accordion-item>
+				</fluent-accordion>
+			</div>
+			<div id="anchors" class="controls">
+				<h2>Anchors</h2>
+				<fluent-anchor>Default (neutral)</fluent-anchor>
+				<fluent-anchor appearance="accent">Accent</fluent-anchor>
+				<fluent-anchor appearance="stealth">Stealth</fluent-anchor>
+				<fluent-anchor appearance="outline">Outline</fluent-anchor>
+				<fluent-anchor appearance="lightweight">Lightweight</fluent-anchor>
+			</div>
+			<div id="badge">
+				<h2>Badge</h2>
+				<fluent-badge>Default (lightweight)</fluent-badge>
+				<!-- BUG: https://github.com/microsoft/fluentui/issues/14397 -->
+				<fluent-badge appearance="accent">Accent</fluent-badge>
+				<fluent-badge appearance="neutral">Badge</fluent-badge>
+				<p><b>With custom map (CSS file):</b></p>
+				<fluent-badge fill="highlight" color="highlight">Badge</fluent-badge>
+				<fluent-badge fill="lowlight" color="lowlight">Badge</fluent-badge>
+			</div>
+			<div id="buttons" class="controls">
+				<h2>Buttons</h2>
+				<fluent-button aria-pressed="true">Default (neutral)</fluent-button>
+				<fluent-button appearance="accent">Accent</fluent-button>
+				<fluent-button appearance="stealth">Stealth</fluent-button>
+				<fluent-button appearance="outline">Outline</fluent-button>
+				<fluent-button appearance="lightweight">Lightweight</fluent-button>
+			</div>
+			<fluent-design-system-provider use-defaults background-color="#F2F2F2" id="card" style="padding: 12px;">
+				<h2>Card</h2>
+				<fluent-card style="--card-height: 200px; --card-width: 300px;"></fluent-card>
+			</fluent-design-system-provider>
+			<div id="checkbox">
+				<h2>Checkbox</h2>
+				<fluent-checkbox>My Checkbox</fluent-checkbox>
+			</div>
+			<!-- <div id="dialog"></div> -->
+			<div id="divider">
+				<h2>Divider</h2>
+				<fluent-divider></fluent-divider>
+			</div>
+			<div id="flipper" id="card">
+				<fluent-flipper direction="previous"></fluent-flipper>
+				<fluent-flipper direction="next"></fluent-flipper>
+				<p><b>With slotted content</b></p>
+				<fluent-flipper direction="next">
+					<svg slot="previous" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M6.5,7.7h-1v-1h1V7.7z M10.6,7.7h-1v-1h1V7.7z M14.7,6.7v2.1h-1v2.6c0,0.2,0,0.4-0.1,0.6c-0.1,0.2-0.2,0.4-0.3,0.5c-0.1,0.1-0.3,0.3-0.5,0.3c-0.2,0.1-0.4,0.1-0.6,0.1H10l-3.5,3v-3H3.9c-0.2,0-0.4,0-0.6-0.1c-0.2-0.1-0.4-0.2-0.5-0.3c-0.1-0.1-0.3-0.3-0.3-0.5c-0.1-0.2-0.1-0.4-0.1-0.6V8.8h-1V6.7h1V5.2c0-0.2,0-0.4,0.1-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.1,0.3-0.3,0.5-0.3c0.2-0.1,0.4-0.1,0.6-0.1h3.6V1.9C7.3,1.8,7.2,1.7,7.1,1.5C7,1.4,7,1.2,7,1C7,0.9,7,0.8,7,0.6c0.1-0.1,0.1-0.2,0.2-0.3c0.1-0.1,0.2-0.2,0.3-0.2C7.7,0,7.9,0,8,0c0.1,0,0.3,0,0.4,0.1c0.1,0.1,0.2,0.1,0.3,0.2C8.8,0.4,8.9,0.5,9,0.6C9,0.8,9,0.9,9,1c0,0.2,0,0.4-0.1,0.5C8.8,1.7,8.7,1.8,8.5,1.9v1.7h3.6c0.2,0,0.4,0,0.6,0.1c0.2,0.1,0.4,0.2,0.5,0.3c0.1,0.1,0.3,0.3,0.3,0.5c0.1,0.2,0.1,0.4,0.1,0.6v1.5H14.7z M12.6,5.2c0-0.1-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.4-0.2H3.9c-0.1,0-0.3,0.1-0.4,0.2C3.4,4.9,3.4,5,3.4,5.2v6.2c0,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2h3.6v1.8l2.1-1.8h2.5c0.1,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.2,0.2-0.4V5.2z M5.8,8.9c0.3,0.3,0.6,0.5,1,0.7C7.2,9.7,7.6,9.8,8,9.8s0.8-0.1,1.2-0.2c0.4-0.2,0.7-0.4,1-0.7l0.7,0.7c-0.4,0.4-0.8,0.7-1.4,0.9c-0.5,0.2-1,0.3-1.6,0.3s-1.1-0.1-1.6-0.3c-0.5-0.2-1-0.5-1.3-0.9L5.8,8.9z" />
+					</svg>
+					<svg slot="next" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13,8L3,15V1L13,8z M4,13.1L11.3,8L4,2.9V13.1z" />
+					</svg>
+				</fluent-flipper>
+				<p><b>Aria-hidden="false" - Place into tab order</b></p>
+				<fluent-flipper aria-hidden="false"></fluent-flipper>
+			</div>
+			<div id="menu">
+				<h2>Menu</h2>
+				<fluent-menu>
+					<fluent-menu-item disabled>Menu item 1</fluent-menu-item>
+					<fluent-menu-item>Menu item 2</fluent-menu-item>
+					<fluent-menu-item>Menu item 3</fluent-menu-item>
+				</fluent-menu>
+			</div>
+			<div id="progress">
+				<h2>Progress</h2>
+				<fluent-progress></fluent-progress>
+				<h2>Progress ring</h2>
+				<fluent-progress-ring></fluent-progress-ring>
+			</div>
+			<div id="radio">
+				<h2>Radio</h2>
+				<fluent-radio>My radio</fluent-radio>
+			</div>
+			<div id="radiogroup">
+				<h2>Radio group</h2>
+				<fluent-radio-group required="true" name="fruits">
+					<label slot="label">Fruits</label>
+					<fluent-radio value="apples">Apples</fluent-radio>
+					<fluent-radio value="oranges">Oranges</fluent-radio>
+					<fluent-radio value="bananas">Bananas</fluent-radio>
+					<fluent-radio value="kiwi">Kiwi</fluent-radio>
+				</fluent-radio-group>
+			</div>
+			<div id="select">
+				<h2>Select</h2>
+				<label for="state" style="margin-top: 8px;">State:</label><br />
+				<fluent-select id="state" name="state">
+					<fluent-option value="AL">Alabama</fluent-option>
+					<fluent-option value="AK">Alaska</fluent-option>
+					<fluent-option value="AZ">Arizona</fluent-option>
+					<fluent-option value="AR">Arkansas</fluent-option>
+					<fluent-option value="CA">California</fluent-option>
+					<fluent-option value="CO">Colorado</fluent-option>
+					<fluent-option value="CT">Connecticut</fluent-option>
+					<fluent-option value="DE">Delaware</fluent-option>
+					<fluent-option value="FL">Florida</fluent-option>
+					<fluent-option value="GA">Georgia</fluent-option>
+					<fluent-option value="HI">Hawaii</fluent-option>
+					<fluent-option value="ID">Idaho</fluent-option>
+					<fluent-option value="IL">Illinois</fluent-option>
+					<fluent-option value="IN">Indiana</fluent-option>
+					<fluent-option value="IA">Iowa</fluent-option>
+					<fluent-option value="KS">Kansas</fluent-option>
+					<fluent-option value="KY">Kentucky</fluent-option>
+					<fluent-option value="LA">Louisiana</fluent-option>
+					<fluent-option value="ME">Maine</fluent-option>
+					<fluent-option value="MD">Maryland</fluent-option>
+					<fluent-option value="MA">Massachussets</fluent-option>
+					<fluent-option value="MI">Michigain</fluent-option>
+					<fluent-option value="MN">Minnesota</fluent-option>
+					<fluent-option value="MS">Mississippi</fluent-option>
+					<fluent-option value="MO">Missouri</fluent-option>
+					<fluent-option value="MT">Montana</fluent-option>
+					<fluent-option value="NE">Nebraska</fluent-option>
+					<fluent-option value="NV">Nevada</fluent-option>
+					<fluent-option value="NH">New Hampshire</fluent-option>
+					<fluent-option value="NJ">New Jersey</fluent-option>
+					<fluent-option value="NM">New Mexico</fluent-option>
+					<fluent-option value="NY">New York</fluent-option>
+					<fluent-option value="NC">North Carolina</fluent-option>
+					<fluent-option value="ND">North Dakota</fluent-option>
+					<fluent-option value="OH">Ohio</fluent-option>
+					<fluent-option value="OK">Oklahoma</fluent-option>
+					<fluent-option value="OR">Oregon</fluent-option>
+					<fluent-option value="PA">Pennsylvania</fluent-option>
+					<fluent-option value="RI">Rhode Island</fluent-option>
+					<fluent-option value="SC">South Carolina</fluent-option>
+					<fluent-option value="SD">South Dakota</fluent-option>
+					<fluent-option value="TX">Texas</fluent-option>
+					<fluent-option value="TN">Tennessee</fluent-option>
+					<fluent-option value="UT">Utah</fluent-option>
+					<fluent-option value="VT">Vermont</fluent-option>
+					<fluent-option value="VA">Virginia</fluent-option>
+					<fluent-option value="WA">Washington</fluent-option>
+					<fluent-option value="WI">Wisconsin</fluent-option>
+					<fluent-option value="WV">West Virginia</fluent-option>
+					<fluent-option value="WY">Wyoming</fluent-option>
+				</fluent-select>
+			</div>
+			<div id="slider" style="margin-top: 30px;">
+				<h2>Slider</h2>
+				<label for="slider1" style="margin-left: 8px;">My Slider:</label>
+				<fluent-slider id="slider1" min="0" max="100" step="10"></fluent-slider>
+			</div>
+			<div id="switch">
+				<h2>Switch</h2>
+				<fluent-switch>
+					<span style="margin-inline-end: 4px;">My switch</span>
+				</fluent-switch>
+			</div>
+			<div id="tabs">
+				<h2>Tabs</h2>
+				<fluent-tabs id="myTab" activeId="TabTwo">
+					<fluent-tab id="TabOne">Tab one</fluent-tab>
+					<fluent-tab id="TabTwo">Tab two</fluent-tab>
+					<fluent-tab id="TabThree">Tab three</fluent-tab>
+					<fluent-tab-panel id="TabPanelOne">
+						<div>
+							<h3>Tab panel one heading</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+								do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+								irure dolor in reprehenderit in voluptate velit esse cillum
+								dolore eu fugiat nulla pariatur.
+							</p>
+						</div>
+					</fluent-tab-panel>
+					<fluent-tab-panel id="TabPanelTwo">
+						<div>
+							<h3>Tab panel two heading</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+								do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+								irure dolor in reprehenderit in voluptate velit esse cillum
+								dolore eu fugiat nulla pariatur.
+							</p>
+						</div>
+					</fluent-tab-panel>
+					<fluent-tab-panel id="TabPanelThree">
+						<div>
+							<h3>Tab panel three heading</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+								do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+								irure dolor in reprehenderit in voluptate velit esse cillum
+								dolore eu fugiat nulla pariatur.
+							</p>
+						</div>
+					</fluent-tab-panel>
+					<div>Testing</div>
+				</fluent-tabs>
+			</div>
+			<div id="textarea" class="controls">
+				<h2>Textarea</h2>
+				<fluent-text-area placeholder="Default (outline)"></fluent-text-area>
+				<fluent-text-area appearance="filled" placeholder="Filled"></fluent-text-area>
+			</div>
+			<div id="textfield" class="controls">
+				<h2>Text Field</h2>
+				<fluent-text-field placeholder="Default (outline)">
+					<svg slot="start" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13,8L3,15V1L13,8z M4,13.1L11.3,8L4,2.9V13.1z" />
+					</svg>
+				</fluent-text-field>
+				<fluent-text-field appearance="filled" placeholder="Filled"></fluent-text-field>
+			</div>
+			<div id="treeview">
+				<h2>Tree View</h2>
+				<fluent-tree-view>
+					<fluent-tree-item expanded>
+						Different things
+						<fluent-tree-item>
+							Flowers
+							<fluent-tree-item>Daisy</fluent-tree-item>
+							<fluent-tree-item>Sunflower</fluent-tree-item>
+							<fluent-tree-item>Rose</fluent-tree-item>
+						</fluent-tree-item>
+						<fluent-divider></fluent-divider>
+						<fluent-tree-item>
+							Planes
+							<fluent-tree-item selected>Tomcat</fluent-tree-item>
+							<fluent-tree-item>Hawker Harrier</fluent-tree-item>
+							<fluent-tree-item>Cesna</fluent-tree-item>
+						</fluent-tree-item>
+					</fluent-tree-item>
+				</fluent-tree-view>
+			</div>
+		</fluent-design-system-provider>
+	</div>
+</body>
+
+</html>

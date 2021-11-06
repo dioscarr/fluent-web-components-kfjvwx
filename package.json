@@ -1,0 +1,13 @@
+{
+  "name": "typescript",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@fluentui/web-components": "^2.0.1",
+    "@microsoft/fast-colors": "^5.1.4",
+    "@microsoft/fast-element": "^1.6.2",
+    "@microsoft/fast-web-utilities": "^5.0.2",
+    "lodash-es": "^4.17.21",
+    "tslib": "^2.3.1"
+  }
+}
